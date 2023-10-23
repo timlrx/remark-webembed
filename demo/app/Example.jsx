@@ -33,7 +33,7 @@ function Example({ markdown, options }) {
           </div>
           <h2 className="text-2xl mt-4 mb-2">Settings</h2>
           <div className="pb-4 bg-gray-200 whitespace-pre overflow-auto rounded p-4" id="markdown">
-            {JSON.stringify({ options: 'option' }, null, 2)}
+            {JSON.stringify({ options: { queryParams: {} } }, null, 2)}
           </div>
         </div>
         <div className="mt-4 lg:mt-8 w-screen">
