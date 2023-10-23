@@ -1,0 +1,100 @@
+{
+  "name": "rehype-webembed",
+  "version": "0.0.1",
+  "description": "remark plugin to embed web content using markdown directives",
+  "source": "index.js",
+  "files": [
+    "dist"
+  ],
+  "type": "module",
+  "sideEffects": false,
+  "module": "./dist/rehype-webembed.es.js",
+  "types": "./dist/index.d.ts",
+  "exports": "./dist/rehype-webembed.es.js",
+  "scripts": {
+    "build": "tsc -b && microbundle src/index.js --format esm",
+    "tsc": "tsc --watch",
+    "lint": "eslint .",
+    "prettier": "prettier --write '*.js'",
+    "vite": "vite",
+    "vite:build": "vite build",
+    "vite:preview": "vite preview",
+    "test": "NODE_OPTIONS='--experimental-specifier-resolution=node' uvu test",
+    "e2e": "cd demo && playwright test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/timlrx/remark-webembed.git"
+  },
+  "keywords": [
+    "remark",
+    "remark-plugin",
+    "webembed",
+    "mdx",
+    "markdown"
+  ],
+  "author": "Timothy Lin <timothy0336@hotmail.com> (https://timlrx.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/timlrx/remark-webembed/issues"
+  },
+  "homepage": "https://github.com/timlrx/remark-webembed#readme",
+  "dependencies": {
+    "async": "^3.2.4",
+    "cross-fetch": "^4.0.0",
+    "hast-util-from-html-isomorphic": "^2.0.0",
+    "unist-util-visit": "^5.0.0",
+    "url-metadata": "^3.3.0"
+  },
+  "devDependencies": {
+    "@esbuild-plugins/node-globals-polyfill": "^0.2.3",
+    "@esbuild-plugins/node-modules-polyfill": "^0.2.2",
+    "@playwright/test": "^1.39.0",
+    "@tailwindcss/typography": "^0.5.9",
+    "@types/node": "^20.8.4",
+    "@vitejs/plugin-react": "^4.1.0",
+    "autoprefixer": "^10.4.13",
+    "dedent": "^0.7.0",
+    "eslint": "^8.51.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-node": "^11.1.0",
+    "glob": "^7.2.0",
+    "husky": "^8.0.0",
+    "lint-staged": "^14.0.0",
+    "microbundle": "^0.14.1",
+    "postcss": "^8.4.21",
+    "prettier": "^2.3.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "rehype": "^13.0.0",
+    "rehype-stringify": "^10.0.0",
+    "remark-directive": "^3.0.0",
+    "remark-gfm": "^4.0.0",
+    "remark-parse": "^11.0.0",
+    "remark-rehype": "^11.0.0",
+    "rollup-plugin-polyfill-node": "^0.8.0",
+    "rollup-plugin-visualizer": "^5.5.4",
+    "tailwindcss": "^3.2.4",
+    "typescript": "^5.2.2",
+    "unified": "^11.0.0",
+    "uvu": "^0.5.1",
+    "vite": "^4.4.11"
+  },
+  "prettier": {
+    "printWidth": 100,
+    "tabWidth": 2,
+    "useTabs": false,
+    "singleQuote": true,
+    "bracketSpacing": true,
+    "semi": false,
+    "trailingComma": "es5"
+  },
+  "lint-staged": {
+    "*.+(js|jsx|ts|tsx)": [
+      "eslint --fix"
+    ],
+    "*.+(js|jsx|ts|tsx|json|css|md|mdx)": [
+      "prettier --write"
+    ]
+  }
+}
