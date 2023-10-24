@@ -11,7 +11,7 @@ import remarkWebembed from '../index.js'
 /**
  *
  * @param {string} markdown
- * @param {import('../src/types').WebEmbedOptions} [options]
+ * @param {import('../src/types.js').WebEmbedOptions} [options]
  */
 const parse = (markdown, options = {}) => {
   return unified()

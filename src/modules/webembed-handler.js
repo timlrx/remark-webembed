@@ -1,15 +1,16 @@
 /**
- * @typedef {import('../types').OEmbedResponseType} OEmbedResponseType
- * @typedef {import('../types').ProviderDetails} ProviderDetails
+ * @typedef {import('../types.js').OEmbedResponseType} OEmbedResponseType
+ * @typedef {import('../types.js').ProviderDetails} ProviderDetails
  */
+// @ts-ignore
 import tryEach from 'async/tryEach'
-import Platform from './Platform'
-import oEmbedProviders from '../providers/oembed'
-import { getMetaData, wrapHTML, wrapFallbackHTML, fetchOembed } from '../utils'
+import Platform from './Platform.js'
+import oEmbedProviders from '../providers/oembed.js'
+import { getMetaData, wrapHTML, wrapFallbackHTML, fetchOembed } from '../utils.js'
 
 /**
  * @param {string} incomingURL
- * @param {import('../types').WebEmbedOptions} [options]
+ * @param {import('../types.js').WebEmbedOptions} [options]
  */
 export default function get(incomingURL, options) {
   try {
@@ -34,14 +35,8 @@ export class WebembedHandler {
   embedURL
 
   /**
-   * Final response object.
-   * @type {Object}
-   */
-  finalResponse = {}
-
-  /**
    * Query parameters, including the forceFallback flag.
-   * @type {import('../types').QueryParams}
+   * @type {import('../types.js').QueryParams}
    */
   queryParams = {}
 

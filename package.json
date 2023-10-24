@@ -1,5 +1,5 @@
 {
-  "name": "rehype-webembed",
+  "name": "remark-webembed",
   "version": "0.0.1",
   "description": "remark plugin to embed web content using markdown directives",
   "source": "index.js",
@@ -7,12 +7,11 @@
     "dist"
   ],
   "type": "module",
-  "sideEffects": false,
-  "module": "./dist/rehype-webembed.es.js",
+  "module": "./dist/remark-webembed.mjs",
   "types": "./dist/index.d.ts",
-  "exports": "./dist/rehype-webembed.es.js",
+  "exports": "./dist/index.js",
   "scripts": {
-    "build": "tsc -b && microbundle src/index.js --format esm",
+    "build": "tsc -b && microbundle index.js  --format modern",
     "tsc": "tsc --watch",
     "lint": "eslint .",
     "prettier": "prettier --write '*.js'",
