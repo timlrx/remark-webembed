@@ -7,9 +7,10 @@
     "dist"
   ],
   "type": "module",
-  "module": "./dist/remark-webembed.mjs",
+  "sideEffects": false,
+  "module": "./dist/remark-webembed.es.js",
   "types": "./dist/index.d.ts",
-  "exports": "./dist/index.js",
+  "exports": "./dist/remark-webembed.es.js",
   "scripts": {
     "build": "tsc -b && microbundle index.js  --format modern",
     "tsc": "tsc --watch",

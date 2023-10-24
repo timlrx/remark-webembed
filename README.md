@@ -1,4 +1,4 @@
-# Rehype-Webembed
+# Remark Webembed
 
 [remark](https://github.com/wooorm/remark) plugin to embed web content using [markdown directives](https://github.com/remarkjs/remark-directive).
 
