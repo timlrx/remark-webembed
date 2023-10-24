@@ -10,7 +10,7 @@
   "sideEffects": false,
   "module": "./dist/remark-webembed.es.js",
   "types": "./dist/index.d.ts",
-  "exports": "./dist/remark-webembed.es.js",
+  "exports": "./dist/index.js",
   "scripts": {
     "build": "tsc -b && microbundle index.js  --format modern",
     "tsc": "tsc --watch",
