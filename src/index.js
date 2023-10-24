@@ -1,19 +1,18 @@
-
 // Register `hName`, `hProperties` types, used when turning markdown to HTML:
 /// <reference types="mdast-util-to-hast" />
 // Register directive nodes in mdast:
 /// <reference types="mdast-util-directive" />
 
 /**
- * @typedef {import('./types').WebEmbedOptions} Options
+ * @typedef {import('./types.js').WebEmbedOptions} Options
  * @typedef {import('mdast-util-directive').TextDirective} TextDirective
  * @typedef {import('mdast-util-directive').LeafDirective} LeafDirective
  * @typedef {import('mdast-util-directive').ContainerDirective} ContainerDirective
  */
 
 import { visit } from 'unist-util-visit'
-import get from "./modules/webembed-handler";
-import { htmlToHast } from './utils';
+import get from './modules/webembed-handler.js'
+import { htmlToHast } from './utils.js'
 /**
  * Remark plugin to embed web content using markdown directives
  *
@@ -33,28 +32,23 @@ export default function remarkWebembed(options) {
     const embedNodes = []
     visit(tree, (node) => {
       if (
-        node.type === "textDirective" ||
-        node.type === "leafDirective" ||
-        node.type === "containerDirective"
+        node.type === 'textDirective' ||
+        node.type === 'leafDirective' ||
+        node.type === 'containerDirective'
       ) {
         if (node.name !== 'embed') return
         embedNodes.push(node)
 
         if (node.type === 'textDirective') {
-          file.fail(
-            'Unexpected `:embed` text directive, use two colons for a leaf directive',
-            node
-          )
+          file.fail('Unexpected `:embed` text directive, use two colons for a leaf directive', node)
         }
       }
     })
 
     for (const node of embedNodes) {
       const data = node.data || (node.data = {})
-      const attributes = node.attributes || {}
-      const id = attributes.id
 
-      const url = node.children[0].type === "text" && node.children[0].value
+      const url = node.children[0].type === 'text' && node.children[0].value
       const results = await get(url, options)
       if (!results.error) {
         const hast = results.output.hast ? results.output.hast : htmlToHast(results.output.html)

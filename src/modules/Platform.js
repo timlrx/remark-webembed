@@ -1,18 +1,17 @@
-
 /**
- * @typedef {import('../types').OEmbedResponseType} OEmbedResponseType
- * @typedef {import('../types').RequestResponseType} RequestResponseType
+ * @typedef {import('../types.js').OEmbedResponseType} OEmbedResponseType
+ * @typedef {import('../types.js').RequestResponseType} RequestResponseType
  */
 
-import { makeRequest, wrapHTML } from '../utils'
+import { makeRequest, wrapHTML } from '../utils.js'
 
 class Platform {
   /**
-   * @param {import('../types').PlatformType} options - The platform options.
+   * @param {import('../types.js').PlatformType} options - The platform options.
    */
   constructor({ provider, targetURL, embedURL, queryParams, options }) {
     /**
-     * @type {import('../types').Provider | null}
+     * @type {import('../types.js').Provider | null}
      */
     this.provider = provider
 
@@ -32,12 +31,12 @@ class Platform {
     this.response = null
 
     /**
-     * @type {import('../types').QueryParams}}
+     * @type {import('../types.js').QueryParams}}
      */
     this.queryParams = queryParams
 
     /**
-     * @type {import('../types').WebEmbedOptions}
+     * @type {import('../types.js').WebEmbedOptions}
      */
     this.options = {
       queryParams: options.queryParams,

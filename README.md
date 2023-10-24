@@ -1,6 +1,6 @@
 # Rehype-Webembed
 
-[remark](https://github.com/wooorm/remark) plugin to embed web content using [markdown directives](https://github.com/remarkjs/remark-directive). 
+[remark](https://github.com/wooorm/remark) plugin to embed web content using [markdown directives](https://github.com/remarkjs/remark-directive).
 
 Out of the box support for [oembed](https://oembed.com/) and custom providers. Automatically wraps the iframe into a responsive container.
 
@@ -45,9 +45,28 @@ Input:
 HTML Output:
 
 ```html
-<div><head></head><body><div class="webembed-wrapper" style="position: relative; overflow: hidden; width: 100%; padding-top: 56.49999999999999%;"><iframe width="100%" height="100%" src="https://www.youtube.com/embed/32I0Qso4sDg?feature=oembed" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen title="[HOONIGAN] Gymkhana 2020: Travis Pastrana Takeover; Ultimate Hometown Shred in an 862hp Subaru STI" style="position: absolute; top: 0; left: 0; border: 0;" class="webembed-iframe"></iframe></div></body></div>
+<div>
+  <head></head>
+  <body>
+    <div
+      class="webembed-wrapper"
+      style="position: relative; overflow: hidden; width: 100%; padding-top: 56.49999999999999%;"
+    >
+      <iframe
+        width="100%"
+        height="100%"
+        src="https://www.youtube.com/embed/32I0Qso4sDg?feature=oembed"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen
+        title="[HOONIGAN] Gymkhana 2020: Travis Pastrana Takeover; Ultimate Hometown Shred in an 862hp Subaru STI"
+        style="position: absolute; top: 0; left: 0; border: 0;"
+        class="webembed-iframe"
+      ></iframe>
+    </div>
+  </body>
+</div>
 ```
-
 
 ## API
 
@@ -59,6 +78,6 @@ HTML Output:
 
 Type: `object`.
 
-Query parameters passed to the oembed API. If `maxWidth` or `maxHeight` is specified, it will be applied to the iframe container as well. 
+Query parameters passed to the oembed API. If `maxWidth` or `maxHeight` is specified, it will be applied to the iframe container as well.
 
 Check the oembed provider's documentation for supported query parameters.

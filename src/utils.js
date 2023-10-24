@@ -15,8 +15,8 @@ export const htmlToHast = (html) => {
 
 /**
  *
- * @param {import('./types').OEmbedResponseType} oembedResponse
- * @param {import('./types').CustomAttributes} customAttributes
+ * @param {import('./types.js').OEmbedResponseType} oembedResponse
+ * @param {import('./types.js').CustomAttributes} customAttributes
  * @returns
  */
 export function wrapHTML(oembedResponse, customAttributes = {}) {
@@ -43,8 +43,9 @@ export function wrapHTML(oembedResponse, customAttributes = {}) {
         tagName: 'div',
         properties: {
           class: 'webembed-wrapper',
-          style: `position: relative; overflow: hidden; width: 100%; padding-top: ${paddingTop * 100
-            }%;`,
+          style: `position: relative; overflow: hidden; width: 100%; padding-top: ${
+            paddingTop * 100
+          }%;`,
         },
         children: [node],
       }
@@ -95,7 +96,7 @@ export const wrapFallbackHTML = async (data) => {
 
 /**
  * @param {string} url
- * @returns {Promise<import('./types').RequestResponseType>}
+ * @returns {Promise<import('./types.js').RequestResponseType>}
  */
 export const makeRequest = async (url) => {
   try {
@@ -132,8 +133,8 @@ export const getMetaData = (url) =>
 
 /**
  * @param {string} url
- * @param {import('./types').Provider} provider
- * @param {import('./types').QueryParams} queryParams
+ * @param {import('./types.js').Provider} provider
+ * @param {import('./types.js').QueryParams} queryParams
  */
 export async function fetchOembed(url, provider, queryParams) {
   // Use https endpoint only
